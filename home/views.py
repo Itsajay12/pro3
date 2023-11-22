@@ -31,10 +31,11 @@ def register(request):
 def login_user(request):
     if request.method=="POST":
         uname=request.POST['email']
-        query=authenticate(request,username=uname,password=request.POST['password'])
+        password=request.POST['password']
+        query=authenticate(request,username=uname,password=password)
         if query is None:
             messages.error(request,"Invalid credentials")
-            return redirect(login)
+            return redirect(login_user)
         else:
             login(request,query)
             return render(request,'index.html',{"uname":uname})

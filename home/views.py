@@ -30,13 +30,14 @@ def register(request):
     return render(request,'register.html')
 def login_user(request):
     if request.method=="POST":
-        query=authenticate(request,username=request.POST['email'],password=request.POST['password'])
+        uname=request.POST['email']
+        query=authenticate(request,username=uname,password=request.POST['password'])
         if query is None:
             messages.error(request,"Invalid credentials")
             return redirect(login)
         else:
             login(request,query)
-            return redirect(index)
+            return render(request,'index.html',{"uname":uname})
     else:
         return render(request,'login.html')
 def logout_page(request):

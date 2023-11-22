@@ -161,3 +161,8 @@
     font-weight:600
   }
 }
+
+.carousel-item  img{
+  object-fit: cover;
+  height: 10px;
+}

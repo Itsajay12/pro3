@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container m-5">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" >
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">First Name</label>
+                    <input type="text" name="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                    <input type="text" name="lname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">User Name</label>
+                    <input type="text"  name="uname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"> Confirm  Password</label>
+                    <input type="password" name="cpassword" class="form-control" id="exampleInputPassword1">
+                  </div>
+               
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            
+        </div>
+        <div class="col-md-6">
+            <img src="https://t4.ftcdn.net/jpg/02/62/46/47/360_F_262464703_mlUp5osTFwJzVNJLStSslo6kxHB7Kicw.jpg" alt="">
+            <div class="bg-warning">
+                {% for message in messages %}
+                <div class="text-danger">{{message}}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+

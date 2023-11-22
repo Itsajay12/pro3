@@ -1,9 +1,11 @@
 from django.shortcuts import render,redirect
 from .models import*
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import authenticate, login, logout
 # Create your views here.
+@login_required(login_url="/login")
 def index(request):
     return render(request,'index.html')
 def register(request):
@@ -37,3 +39,6 @@ def login_user(request):
             return redirect(index)
     else:
         return render(request,'login.html')
+def logout_page(request):
+    logout(request)
+    return redirect('/login/')

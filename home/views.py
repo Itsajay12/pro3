@@ -14,13 +14,14 @@ def register(request):
         email=request.POST['email']
         passw=request.POST['password']
         cpassw=request.POST['cpassword']
+        username=request.POST['uname']
         if passw==cpassw:
-            if User.objects.filter(email=email).exists():
-                messages.info(request,'Email exists')
+            if User.objects.filter(email=email).exists() or User.objects.filter(username=request.POST['uname']).exists():
+                messages.info(request,'User name or Email exists')
                 return redirect(register)
             else:
                 print("r")
-                query=User.objects.create(first_name=request.POST['fname'],last_name=request.POST['lname'],username=request.POST['uname'],email=email,password=passw)
+                query=User.objects.create(first_name=request.POST['fname'],last_name=request.POST['lname'],username=username,email=email,password=passw)
                 query.set_password(passw)
                 query.save()
                 return redirect(login)
@@ -44,3 +45,6 @@ def login_user(request):
 def logout_page(request):
     logout(request)
     return redirect('/login/')
+@login_required(login_url='/login')
+def secondpage(request):
+    return render(request,'second.html')

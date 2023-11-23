@@ -1,30 +1,314 @@
 {% extends "base.html" %}
 {% block content %}
-<div id="carouselExampleSlidesOnly " class="carousel slide m-3" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu0JAMPtLKtfmRY0TApaXq3s80-4RacHL1lA&usqp=CAU" class="d-block w-100 " alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="data:image/jpeg;base64,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" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW43DLGh6HgvzNynUzoWwiX7RIsvZr8GI9noeTepp566RinAfByvB_8HxIsGYuyEM1g2M&usqp=CAU" class="d-block w-100" alt="...">
+<style>
+  #intro {
+    background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
+    height: 100vh;
+  }
+
+  /* Height for devices larger than 576px */
+  @media (min-width: 992px) {
+    #intro {
+      margin-top: -58.59px;
+    }
+  }
+
+  .navbar .nav-link {
+    color: #fff !important;
+  }
+</style>
+
+<!-- Navbar -->
+{% comment %} <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand nav-link" target="_blank" href="https://mdbootstrap.com/docs/standard/">
+      <strong>MDB</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+      aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarExample01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" aria-current="page" href="#intro">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
+            target="_blank">Learn Bootstrap 5</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Download MDB UI KIT</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav d-flex flex-row">
+        <!-- Icons -->
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
+            target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </li>
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="https://www.facebook.com/mdbootstrap" rel="nofollow" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="https://twitter.com/MDBootstrap" rel="nofollow" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="https://github.com/mdbootstrap/mdb-ui-kit" rel="nofollow" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> {% endcomment %}
+<!-- Navbar -->
+
+<!-- Background image -->
+<div id="intro" class="bg-image shadow-2-strong">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+    <div class="container d-flex align-items-center justify-content-center text-center h-100">
+      <div class="text-white">
+        <h1 class="mb-3">Learn Bootstrap 5 with MDB</h1>
+        <h5 class="mb-4">Best & free guide of responsive web design</h5>
+        <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"
+          rel="nofollow" target="_blank">Start tutorial</a>
+        <a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"
+          role="button">Download MDB UI KIT</a>
       </div>
     </div>
   </div>
-  <div class="card text-center">
-    <div class="card-header">
-      Featured
+</div>
+<!-- Background image -->
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main class="mt-5">
+<div class="container">
+  <!--Section: Content-->
+  <section>
+    <div class="row">
+      <div class="col-md-6 gx-5 mb-4">
+        <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
+          <img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" />
+          <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6 gx-5 mb-4">
+        <h4><strong>Facilis consequatur eligendi</strong></h4>
+        <p class="text-muted">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
+          eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
+          sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+        </p>
+        <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
+        <p class="text-muted">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
+          nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
+          alias, unde optio accusantium soluta, iusto molestiae adipisci et?
+        </p>
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+  </section>
+  <!--Section: Content-->
+
+  <hr class="my-5" />
+
+  <!--Section: Content-->
+  <section class="text-center">
+    <h4 class="mb-5"><strong>Facilis consequatur eligendi</strong></h4>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card">
+          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the
+              card's content.
+            </p>
+            <a href="#!" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/023.jpg" class="img-fluid" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the
+              card's content.
+            </p>
+            <a href="#!" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the
+              card's content.
+            </p>
+            <a href="#!" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card-footer text-body-secondary">
-      2 days ago
+  </section>
+  <!--Section: Content-->
+
+  <hr class="my-5" />
+
+  <!--Section: Content-->
+  <section class="mb-5">
+    <h4 class="mb-5 text-center"><strong>Facilis consequatur eligendi</strong></h4>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6">
+        <form>
+          <!-- 2 column grid layout with text inputs for the first and last names -->
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="form3Example1" class="form-control" />
+                <label class="form-label" for="form3Example1">First name</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="form3Example2" class="form-control" />
+                <label class="form-label" for="form3Example2">Last name</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form3Example3" class="form-control" />
+            <label class="form-label" for="form3Example3">Email address</label>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" id="form3Example4" class="form-control" />
+            <label class="form-label" for="form3Example4">Password</label>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="form-check d-flex justify-content-center mb-4">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" checked />
+            <label class="form-check-label" for="form2Example3">
+              Subscribe to our newsletter
+            </label>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-block mb-4">
+            Sign up
+          </button>
+
+          <!-- Register buttons -->
+          <div class="text-center">
+            <p>or sign up with:</p>
+            <button type="button" class="btn btn-primary btn-floating mx-1">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+
+            <button type="button" class="btn btn-primary btn-floating mx-1">
+              <i class="fab fa-google"></i>
+            </button>
+
+            <button type="button" class="btn btn-primary btn-floating mx-1">
+              <i class="fab fa-twitter"></i>
+            </button>
+
+            <button type="button" class="btn btn-primary btn-floating mx-1">
+              <i class="fab fa-github"></i>
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
+  </section>
+  <!--Section: Content-->
+</div>
+</main>
+<!--Main layout-->
+
+<!--Footer-->
+<footer class="bg-light text-lg-start">
+<div class="py-4 text-center">
+  <a role="button" class="btn btn-primary btn-lg m-2"
+    href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow" target="_blank">
+    Learn Bootstrap 5
+  </a>
+  <a role="button" class="btn btn-primary btn-lg m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank">
+    Download MDB UI KIT
+  </a>
+</div>
+
+<hr class="m-0" />
+
+<div class="text-center py-4 align-items-center">
+  <p>Follow MDB on social media</p>
+  <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" class="btn btn-primary m-1" role="button"
+    rel="nofollow" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  <a href="https://www.facebook.com/mdbootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+    target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://twitter.com/MDBootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+    target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://github.com/mdbootstrap/mdb-ui-kit" class="btn btn-primary m-1" role="button" rel="nofollow"
+    target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+</div>
+
+<!-- Copyright -->
+<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  © 2020 Copyright:
+  <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+</div>
+<!-- Copyright -->
+</footer>
 <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYV3gkQm6xVcZtkEOfZDCFDBLT6xwdgk0BVQ&usqp=CAU" alt="" width="50%"> -->
 {% endblock content %}
